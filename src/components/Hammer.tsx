@@ -29,6 +29,10 @@ const StyledHammer = styled.img<{ $shouldSlam: boolean }>`
 
     display: none;
 
+    @media (pointer: fine) {
+        display: block;
+    }
+
     animation: ${({$shouldSlam}) => $shouldSlam ? slamHammer : 'none'} forwards;
 }
 `
@@ -54,8 +58,6 @@ export default function Hammer() {
             if (!hammerRef.current) {
                 return;
             }
-
-            hammerRef.current.style.display = 'block';
 
             const hammerHeight = hammerRef.current.clientHeight;
             const hammerWidth = hammerRef.current.clientWidth;

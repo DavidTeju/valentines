@@ -1,15 +1,12 @@
 import {ReactNode, useEffect, useRef, useState} from "react";
 import MoleSlot from "./MoleSlot";
 
-// const Fake = styled.div`
-//     width: 100px;
-//     height: 100px;
-//     background-color: black;
-//     //position: absolute;
-//     //top: 50%;
-//     //left: 50%;
-//     //transform: translate(-50%, -50%);
-// `;
+// Preload the background image
+const sarahBackgroundURL = '/sarah.png';
+const sarahBackgroundImage = new Image();
+sarahBackgroundImage.src = sarahBackgroundURL;
+sarahBackgroundImage.decode();
+
 
 export default function GameSurface({children}: { children?: ReactNode }) {
     const [childWidth, setWidth] = useState(0);
@@ -38,7 +35,7 @@ export default function GameSurface({children}: { children?: ReactNode }) {
     }, []);
 
     return <div className={'surface'} ref={surfaceRef}
-                style={{background: 'url("/sarah.png")', backgroundSize: 'contain', borderRadius: '1rem'}}>
+                style={{background: `url(${sarahBackgroundURL})`, backgroundSize: 'contain', borderRadius: '1rem'}}>
         {Array.from({length: 6}).map(() => <MoleSlot width={childWidth}/>)}
     </div>;
 

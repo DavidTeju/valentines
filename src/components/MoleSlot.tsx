@@ -6,6 +6,13 @@ import {useScore} from "../data/ScoreContext";
 
 const imageLinks = Array.from({length: 7}, (_, i) => i).map((i) => `/david/${i + 1}.png`);
 
+// Preload images
+imageLinks.forEach((link) => {
+    const img = new Image();
+    img.src = link;
+    img.decode();
+});
+
 const MoleSlotContainer = styled.div<{ $width: number }>`
     width: ${({$width}) => $width}px;
     height: ${({$width}) => $width}px;
