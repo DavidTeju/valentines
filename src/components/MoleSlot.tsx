@@ -3,7 +3,7 @@
 import styled from "styled-components";
 import {useEffect, useRef, useState} from "react";
 
-const imageLinks = Array.from({length: 7}, (_, i) => i).map((i) => `/david/${i + 1}.PNG`);
+const imageLinks = Array.from({length: 7}, (_, i) => i).map((i) => `/david/${i + 1}.png`);
 
 const MoleSlotContainer = styled.div<{ $width: number }>`
     width: ${({$width}) => $width}px;
