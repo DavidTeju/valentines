@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import {useEffect, useRef, useState} from "react";
+import {useScore} from "../data/ScoreContext";
 
 const imageLinks = Array.from({length: 7}, (_, i) => i).map((i) => `/david/${i + 1}.png`);
 
@@ -45,12 +46,13 @@ function Mole({shouldDie, onClick}: { shouldDie: boolean, onClick: () => void })
 
     return <SquareCircleImage onClick={onClick} $animation={shouldDie ? 'die-out' : 'expand-out'}
                               alt={"image of my face"} src={imageLink.current} height={200}
-                              width={200}/>;
+                              width={200} draggable={false}/>;
 }
 
 function MoleSlotHole() {
     const [shouldDie, makeDie] = useState(true);
     const [id, setId] = useState(0);
+    const {score, increaseScore} = useScore();
 
     useEffect(() => {
         setTimeout(() => {
@@ -63,11 +65,12 @@ function MoleSlotHole() {
     return <Mole key={id} shouldDie={shouldDie} onClick={() => {
         if (shouldDie) return;
         makeDie(true);
+        increaseScore();
 
         setTimeout(() => {
             setId(id + 1);
             makeDie(false);
-        }, Math.random() * 5000 + 750);
+        }, Math.random() * 5000 + 500);
     }}/>;
 }
 

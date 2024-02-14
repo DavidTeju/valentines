@@ -11,6 +11,8 @@ function App() {
     return (<>
         <Hammer/>
         <audio src="/Theme.mp3" id="theme" loop/>
+        <audio src="/Hammer.mp3" id="hammer"/>
+        <p id={'portrait-warning'}>Put your phone in lanscape mode!!</p>
         {gameStarted ? <GameSurface/> : <Landing startGame={() => startGame(true)}/>}
     </>);
 }

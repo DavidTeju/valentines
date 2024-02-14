@@ -38,7 +38,7 @@ export default function GameSurface({children}: { children?: ReactNode }) {
     }, []);
 
     return <div className={'surface'} ref={surfaceRef}
-                style={{background: 'url("/sarah.png")', backgroundSize: 'contain'}}>
+                style={{background: 'url("/sarah.png")', backgroundSize: 'contain', borderRadius: '1rem'}}>
         {Array.from({length: 6}).map(() => <MoleSlot width={childWidth}/>)}
     </div>;
 

@@ -2,8 +2,26 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  cursor: none;
+  cursor: none !important
+}
 
+#portrait-warning {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  .landing, .surface, img {
+    display: none !important;
+  }
+  #portrait-warning {
+    display: block !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: #ebebeb;
+  }
 }
 
 html,
@@ -22,7 +40,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 15%;
+  padding-top: 15vh;
   gap: 2.5%;
 }
 
@@ -89,7 +107,4 @@ a {
     position: relative;
 
   }
-  //100% {
-  //  display: none;
-  //}
 }

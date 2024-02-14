@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ScoreProvider} from "./data/ScoreContext";
 
 
 const root = ReactDOM.createRoot(
@@ -13,7 +14,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <App/>
+        <ScoreProvider>
+            <App/>
+        </ScoreProvider>
     </React.StrictMode>
 );
 
