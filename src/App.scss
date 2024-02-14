@@ -10,7 +10,7 @@
 }
 
 @media screen and (orientation: portrait) {
-  .landing, .surface, img {
+  .landing, .surface, img, .win-screen {
     display: none !important;
   }
   #portrait-warning {
