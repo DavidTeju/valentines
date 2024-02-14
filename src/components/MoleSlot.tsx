@@ -10,7 +10,7 @@ const MoleSlotContainer = styled.div<{ $width: number }>`
     height: ${({$width}) => $width}px;
     //border: 1px solid #000;
     position: relative;
-    background: url("/MoleSlotContainerBorder.PNG") no-repeat;
+    background: url("/MoleSlotContainerBorder.png") no-repeat;
     background-size: contain;
     padding: ${({$width}) => $width / 5}px;
 
