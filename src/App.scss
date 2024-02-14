@@ -2,6 +2,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: none;
+
 }
 
 html,
@@ -9,7 +11,45 @@ body {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  cursor: none;
+  background-color: rgb(18, 18, 18);
+}
+
+.landing {
+  height: 100vh;
+  width: 100vw;
+  font-size: 5rem;
+  color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15%;
+  gap: 2.5%;
+}
+
+.surface {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin: 2.5vh auto;
+  align-items: center;
+  justify-items: center;
+  height: 95vh;
+  width: min(150vh, 95vw);
+  //background url instyle
+  //background-size: contain;
+}
+
+main {
+  display: grid;
+  // 3 columns, 3 rows, 1fr each
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 a {
@@ -53,4 +93,3 @@ a {
   //  display: none;
   //}
 }
-
