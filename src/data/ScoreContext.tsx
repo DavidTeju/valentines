@@ -2,10 +2,9 @@
 import {createContext, ReactNode, useContext, useState} from 'react';
 
 const ScoreContext = createContext({
-    score: 0,
     increaseScore: () => {
     },
-    setWinAction: (winAction: () => void) => {
+    setWinAction: (_: () => void) => {
     }
 });
 
@@ -25,7 +24,7 @@ const ScoreProvider = ({children}: { children: ReactNode }) => {
     };
 
     return (
-        <ScoreContext.Provider value={{score, increaseScore, setWinAction}}>
+        <ScoreContext.Provider value={{increaseScore, setWinAction}}>
             {children}
         </ScoreContext.Provider>
     );

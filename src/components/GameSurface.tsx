@@ -1,4 +1,4 @@
-import {ReactNode, useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import MoleSlot from "./MoleSlot";
 
 // Preload the background image
@@ -8,7 +8,7 @@ sarahBackgroundImage.src = sarahBackgroundURL;
 sarahBackgroundImage.decode();
 
 
-export default function GameSurface({children}: { children?: ReactNode }) {
+export default function GameSurface() {
     const [childWidth, setWidth] = useState(0);
     const surfaceRef = useRef<HTMLDivElement | null>(null);
 

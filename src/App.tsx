@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.scss';
 import GameSurface from "./components/GameSurface";
 import Landing from "./components/Landing";
@@ -57,7 +57,7 @@ function App() {
         setWinAction(() => () => {
             setGameWon(true);
         });
-    }, [])
+    }, [setWinAction])
 
 
     return (<>

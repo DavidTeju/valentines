@@ -59,7 +59,7 @@ function Mole({shouldDie, onClick}: { shouldDie: boolean, onClick: () => void })
 function MoleSlotHole() {
     const [shouldDie, makeDie] = useState(true);
     const [id, setId] = useState(0);
-    const {score, increaseScore} = useScore();
+    const {increaseScore} = useScore();
 
     useEffect(() => {
         setTimeout(() => {
